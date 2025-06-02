@@ -270,6 +270,7 @@ class MainActivity : AppCompatActivity() {
                 tvTemperature.text = "$objectTemp°C"
 //                tvHeartRate.text = "$heartRate bpm"
                 tvHeartRate.text = String.format("%.1f bpm", heartRate.toDouble())
+                // TES Kontributor
                 tvBloodOxygen.text = "$bloodOxygen%"
             }
 
