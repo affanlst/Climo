@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1087874498326",
+    "firebase_url": "https://jacket-1b665-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "jacket-1b665",
+    "storage_bucket": "jacket-1b665.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087874498326:android:a0011404d458767c851a37",
+        "android_client_info": {
+          "package_name": "com.vergiawan.climo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAolgykfO_kWLM6y4K2DU1y61cfN6MK1uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
