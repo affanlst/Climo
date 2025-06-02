@@ -264,11 +264,12 @@ class MainActivity : AppCompatActivity() {
         reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val objectTemp = snapshot.child("MLX90614").child("object_temp").value
-                val heartRate = snapshot.child("MAX30102").child("heart_rate").value
+                val heartRate = snapshot.child("MAX30102").child("heart_rate").value.toString()
                 val bloodOxygen = snapshot.child("MAX30102").child("spo2").value
 
                 tvTemperature.text = "$objectTemp°C"
-                tvHeartRate.text = "$heartRate bpm"
+//                tvHeartRate.text = "$heartRate bpm"
+                tvHeartRate.text = String.format("%.1f bpm", heartRate.toDouble())
                 tvBloodOxygen.text = "$bloodOxygen%"
             }
 
@@ -302,9 +303,12 @@ class MainActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val bodyTemperature =
                     snapshot.child("MLX90614").child("object_temp").value.toString().toDouble()
+//                val heartRate =
+//                    snapshot.child("MAX30102").child("heart_rate").value.toString().toInt()
                 val heartRate =
-                    snapshot.child("MAX30102").child("heart_rate").value.toString().toInt()
-                val spo2 = snapshot.child("MAX30102").child("spo2").value.toString().toInt()
+                    snapshot.child("MAX30102").child("heart_rate").value.toString().toDouble()
+//                val spo2 = snapshot.child("MAX30102").child("spo2").value.toString().toInt()
+                val spo2 = snapshot.child("MAX30102").child("spo2").value.toString().toDouble()
                 val geoLat = snapshot.child("GPS").child("latitude").value.toString()
                 val geoLng = snapshot.child("GPS").child("longitude").value.toString()
 
@@ -372,9 +376,13 @@ class MainActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val objectTemp =
                     snapshot.child("MLX90614").child("object_temp").value.toString().toDouble()
+//                val heartRate =
+//                    snapshot.child("MAX30102").child("heart_rate").value.toString().toInt()
+//                val bloodOxygen = snapshot.child("MAX30102").child("spo2").value.toString().toInt()
+
                 val heartRate =
-                    snapshot.child("MAX30102").child("heart_rate").value.toString().toInt()
-                val bloodOxygen = snapshot.child("MAX30102").child("spo2").value.toString().toInt()
+                    snapshot.child("MAX30102").child("heart_rate").value.toString().toDouble()
+                val bloodOxygen = snapshot.child("MAX30102").child("spo2").value.toString().toDouble()
 
                 val calculateHypothermia =
                     CalculateHypothermia(
